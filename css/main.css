@@ -1,0 +1,488 @@
+/************************************
+Master Layout
+**************************************/
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+}
+
+main {
+	max-width: 1000px;
+	margin: 2rem auto;
+	padding: 1rem 2rem;
+}
+
+/************************************
+Colors
+**************************************/
+html {
+	color: #393939;
+	--color-blue: #85C1E9;
+	--color-dark-gray: #272727;
+	--color-sage: #c4b9bc;
+	--color-green: #4b553a;
+
+	--color-orange: #c58b2a;
+	--color-light-pink: #f7e3d4;
+	--color-terracotta: #bf8f72;
+	--color-light-green: #c3c6b1;
+	--color-dark-terracotta: #925946;
+
+	--color-peach: #fffaf5;
+}
+
+/************************************
+Typography
+**************************************/
+
+html {
+	--font-primary: 'Noto Sans JP', sans-serif;
+	--font-secondary: 'Open Sans', sans-serif;
+	--font-tertiary: 'Ropa Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-primary);
+	color: var(--color-dark-gray);
+}
+
+h1 {
+	font-size: 52px;
+	letter-spacing: -1.5px;
+	font-weight: 100;
+}
+
+h2 {
+	font-size: 48px;
+	font-weight: 300;
+	letter-spacing: -.5px;
+}
+
+h3 {
+	font-size: 32px;
+	font-weight: 400;
+	letter-spacing: 0px;
+}
+
+h4 {
+	font-size: 24px;
+	letter-spacing: .25px;
+}
+
+h5 {
+	font-size: 18px;
+	letter-spacing: 0px;
+}
+
+h6 {
+	font-size: 15px;
+	letter-spacing: .15px;
+}
+
+
+p {
+	color: var(--color-dark-gray);
+	font-family: var(--font-secondary);
+	line-height: 2;
+	font-size: 16px;
+	letter-spacing: .5px;
+}
+
+a {
+	font-family: var(--font-secondary);
+	color: inherit;
+}
+
+span {
+	font-family: var(--font-primary);
+}
+
+/************************************
+Header Component
+**************************************/
+
+header {
+	padding: 1rem 6rem;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.12);
+}
+
+.logo-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.logo, .sub-logo {
+	color: var(--color-dark-gray);
+	font-family: var(--font-primary);
+	text-decoration: none;
+}
+
+.logo {
+	font-weight: 500;
+	font-size: 27px;
+}
+
+.sub-logo {
+	font-size: 16px;
+}
+
+/************************************
+Site Nav
+**************************************/
+
+.nav-site {
+	max-width: 1000px;
+}
+
+.nav-site ul {
+	list-style-type: none;
+	margin: 0;
+}
+
+.nav-site li a {
+	color: var(--color-dark-gray);
+	display: inline-block;
+	font-size: 1rem;
+	margin: 1rem;
+	line-height: 2;
+	font-weight: 400;
+	letter-spacing: 1px;
+	font-family: var(--font-primary);
+	text-decoration: none;
+}
+
+.nav-site li a:hover {
+	opacity: 60%;
+}
+
+@media ( min-width: 500px ) {
+
+	header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-end;
+		align-items: center;
+	}
+
+	.nav-site li {
+		display: inline-block;
+	}
+
+}
+
+.current-link {
+	font-family: var(--font-primary);
+	border-bottom: 2px solid var(--color-dark-gray);
+	padding-bottom: 35px;
+	font-size: 1rem;
+}
+
+
+/************************************
+POEM GRID
+**************************************/
+
+.table-contents {
+	display: flex;
+	flex-direction: column;
+}
+
+.stanza {
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+article h4 {
+	margin-bottom: 16px;
+}
+
+.poem-title {
+	margin-bottom: 3rem;
+}
+
+.poem-title h1 {
+	margin-bottom: 1rem;
+}
+
+.poem-title span {
+	font-weight: 500;
+	color: var(--color-dark-gray);
+	font-size: 1rem;
+	padding-left: 2px;
+}
+
+.table-contents a {
+	text-decoration: none;
+}
+
+.table-contents a:hover {
+	text-decoration: underline;
+}
+
+@media (min-width: 700px) {
+
+	.poem-grid {
+		padding: 2rem 0rem;
+		display: flex;
+		flex-wrap: wrap;
+		grid-column-gap: 2rem;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.left-side {
+		color: var(--color-dark-gray);
+		flex-grow: 2;
+		font-family: var(--font-secondary);
+		padding: 0;
+	}
+
+	.right-side {
+		align-self: flex-start;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+	  	border-radius: 8px;
+		font-weight: 700;
+		flex-grow: .2;
+		padding: 0 2rem;
+		position: sticky;
+		overflow-y: auto;
+		top: 0;
+	}
+}
+
+/********************************************
+Bio Grid
+*********************************************/
+
+.bio-grid {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 3rem 0;
+	padding-top: 1.5rem;
+}
+
+.bio-grid img{
+	width: 90%;
+}
+
+.bio-grid a:hover {
+	opacity: 50%;
+}
+
+.bio-right h4 {
+	margin-top: 0;
+}
+
+.bio-grid p {
+	font-size: 14px;
+}
+
+.bio-left p {
+	font-family: var(--font-secondary);
+	font-style: italic;
+	margin: 0;
+}
+
+/********************************************
+BIRD IMAGES
+*********************************************/
+
+.flying-birds {
+	position: absolute;
+	opacity: .1;
+}
+
+/*****************************************************
+HOME PAGE PROJECT CARDS
+******************************************************/
+
+.project-cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+}
+
+.project-cards h3 {
+	color: var(--color-dark-gray);
+	font-weight: 400;
+}
+
+.project-cards a {
+	font-family: var(--font-tertiary);
+}
+
+.project1, .project2, .project3, .project4 {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+	padding: 5rem 5rem;
+  	flex: 1;
+  	margin: 1rem;
+	border-radius: 2px;
+	min-width: 300px;
+}
+
+.project-button {
+	color: var(--color-dark-gray);
+	border: 2px solid var(--color-dark-gray);
+	border-radius: 4px;
+	font-size: 14px;
+	letter-spacing: 1px;
+	padding: 12px 28px;
+	transition-duration: 0.3s;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.project-button:hover {
+	color: white;
+	border: 2px solid var(--color-dark-gray);
+	background-color: var(--color-dark-gray);
+}
+
+.disabled {
+	background-color: lightgray;
+	color: gray;
+	border: gray;
+	box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
+
+.disabled:hover {
+	box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
+
+.centered {
+	text-align: center;
+}
+
+
+/********************************************
+Playing with the cards
+********************************************/
+/*
+
+
+.project1 h2 {
+	color: var();
+}
+
+.project1:hover {
+	background-color: #c3c6b1;
+}
+
+.green:hover {
+	background-color: var(--color-green);
+	color: white;
+}
+
+.green {
+	color: var(--color-green);
+	border: 2px solid var(--color-green);
+}
+
+.project2 h2 {
+	color: var(--color-dark-terracotta);
+}
+
+.dark-terracotta {
+	color: var(--color-dark-terracotta);
+	border: 2px solid var(--color-dark-terracotta);
+}
+
+.dark-terracotta:hover {
+	background-color: var(--color-dark-terracotta);
+	color: white;
+}
+
+.project2:hover {
+	background-color: var(--color-light-pink);
+	color: var(--color-dark-terracotta);
+}
+*/
+
+
+/************************************
+Footer Component
+**************************************/
+
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: black;
+	color: white;
+	height: 400px;
+}
+
+footer p {
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14px;
+	font-family: var(--font-tertiary);
+}
+
+.footer a {
+	color: white;
+	font-family: var(--font-tertiary);
+	padding-bottom: .05em;
+	border-bottom-style: solid;
+	border-bottom-color: rgba(255,255,255,.3);
+	border-bottom-width: 1px;
+	letter-spacing: 2px;
+	margin: 1rem;
+	font-size: 14px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.footer li a:hover {
+	opacity: 50%;
+	text-decoration: none;
+}
+
+.footer ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.footer li {
+	display: inline-block;
+}
+
+.footer a:hover {
+	text-decoration: underline;
+}
+
+/****************************************
+PROGRESS BAR
+*****************************************/
+
+/*
+.progress-component {
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	background-color: transparent;
+}
+
+.progress-container {
+	width: 100%;
+	height: 3px;
+	background: transparent;
+}
+
+.progress-bar {
+	height: 3px;
+	background: rgb(255,51,102);
+}
+
+*/
